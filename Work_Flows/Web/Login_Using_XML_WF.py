@@ -1,13 +1,9 @@
 import allure
+from smart_assertions import soft_assert
 
-import Utilities
 from Utilities import XLUtils
-from Utilities.Manage_Pages import Page_Manager
 from Utilities.Read_Properties import get_data
 from Work_Flows.Web.Login_WF import login_wf
-from Work_Flows.Web.Logout_WF import logout_wf
-from extension.Ui_Action import ui_action
-from smart_assertions import soft_assert, verify_expectations
 
 
 class login_xml_wf:

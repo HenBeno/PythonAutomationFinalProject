@@ -5,14 +5,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
-import Utilities
 from Utilities.Manage_Pages import Page_Manager
 from Utilities.Read_Properties import get_data
-from Work_Flows.Web.Login_WF import login_wf
-from extension.Ui_Action import ui_action
 
 driver = None
 action = None
+
 
 @pytest.fixture(scope='class')
 @allure.step("init web driver")
@@ -86,6 +84,7 @@ def init_appium(request):
     Page_Manager.init_web_page(driver)
     yield
     driver.quit()
+
 
 @pytest.fixture(scope='class')
 @allure.step("init api")

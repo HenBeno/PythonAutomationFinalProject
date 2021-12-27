@@ -3,7 +3,6 @@ import allure
 import Utilities
 from Utilities.Manage_Pages import Page_Manager
 from Utilities.Read_Properties import get_data
-from Work_Flows.Web import Login_WF
 from Work_Flows.Web.Login_WF import login_wf
 from Work_Flows.Web.Logout_WF import logout_wf
 from extension.Ui_Action import ui_action

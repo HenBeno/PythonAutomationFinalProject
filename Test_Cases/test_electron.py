@@ -12,7 +12,7 @@ class Test_Electron:
 
     @allure.title("")
     @allure.description("Verify change of color")
-    def test_01_Verify_change_of_color(self):
+    def test_01_verify_change_of_color(self):
         assert electron_change_task_color.change_task_color(get_data("HexColor")) == get_data("ExpectedHexColor")
 
     @allure.description("Verify change of color")

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Environment>
 
-    #init_web
+    # init_web
 	<Url>http://localhost:3030/signin</Url>
 	<Browser>chrome</Browser>
 	<RealWorldApp_name_txt>NameTemp</RealWorldApp_name_txt>
@@ -18,13 +18,14 @@
     <XMLPath>C:\\Automation\\python\\pythonProject\\final_project_python\\Configurations\\LoginData.xlsx</XMLPath>
 
 
-   #init_electron
+   # init_electron
    <electron_app_path>D:\\Electron API Demos-win32-ia32\\Electron API Demos.exe</electron_app_path>
    <electron_driver>C:\\Automation\\electrondriver.exe</electron_driver>
    <HexColor>D0021B</HexColor>
    <ExpectedHexColor>background: rgb(208, 2, 27);</ExpectedHexColor>
 
-   #init_appium
+
+   # init_appium
    <reportDirectory>reports</reportDirectory>
    <reportFormat>xml</reportFormat>
    <testName>Untitled</testName>
@@ -35,7 +36,7 @@
    <server_appium>http://localhost:4723/wd/hub</server_appium>
 
 
-    #init_desktop
+    # init_desktop
     <desired_caps>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</desired_caps>
     <platformName>Windows</platformName>
     <deviceName>WindowsPC</deviceName>
@@ -45,7 +46,7 @@
     <expected_mult>התצוגה היא 5</expected_mult>
 
 
-    #init_api
+    # init_api
     <base_url>http://localhost:3000/posts</base_url>
     <user_Id>25</user_Id>
     <id></id>

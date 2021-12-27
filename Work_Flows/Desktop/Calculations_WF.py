@@ -1,9 +1,8 @@
 import allure
 
 import Utilities
-from extension.Ui_Action import ui_action
-
 from Utilities.Manage_Pages import Page_Manager
+from extension.Ui_Action import ui_action
 
 
 class calculations_wf:

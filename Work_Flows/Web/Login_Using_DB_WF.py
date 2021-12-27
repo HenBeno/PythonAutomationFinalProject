@@ -1,5 +1,5 @@
-from smart_assertions import soft_assert
 import allure
+from smart_assertions import soft_assert
 
 from Utilities.DB_Manager import db_connector
 from Work_Flows.Web.Login_WF import login_wf

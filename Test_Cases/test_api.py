@@ -1,10 +1,6 @@
-import allure
-import pytest as pytest
-
 from Test_Cases.conftest import *
-from Work_Flows.Api.api_workflows import assert_status_code, get_request, post_request, delete_request
-
 from Utilities.Read_Properties import get_data
+from Work_Flows.Api.Api_WF import assert_status_code, get_request, post_request, delete_request
 
 
 @pytest.mark.usefixtures("init_api")

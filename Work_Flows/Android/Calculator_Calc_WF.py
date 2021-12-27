@@ -9,7 +9,7 @@ class Calculator_calc:
 
     @staticmethod
     @allure.title("test calculator - appium")
-    def Calc_test():
+    def calc_test():
         Appium_Actions.Click_on_ele(Utilities.Manage_Pages.Calculator_PO.enter_to_calculator())
         Appium_Actions.Click_on_ele(Utilities.Manage_Pages.Calculator_PO.num_9())
         Appium_Actions.Click_on_ele(Utilities.Manage_Pages.Calculator_PO.op_mul())

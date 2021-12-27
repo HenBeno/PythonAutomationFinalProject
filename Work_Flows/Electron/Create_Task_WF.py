@@ -1,9 +1,6 @@
-import verify as verify
-from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
 
 from Page_Objects.Electron.Electron_PO import Electron_Page
-from Test_Cases.conftest import action, driver
 from extension.Ui_Action import ui_action
 
 
@@ -12,7 +9,7 @@ class create_task:
     @staticmethod
     def create_task_wf(task_name, color):
         create_task.pick_color(color)
-        create_task.craete_task_by_name(task_name)
+        create_task.create_task_by_name(task_name)
         create_task.insert_task()
         return create_task.verify_creation(task_name)
 
@@ -22,7 +19,7 @@ class create_task:
         ui_action.click_on_elem(Electron_Page.openColorsList()[create_task.color_to_num(color.lower())])
 
     @staticmethod
-    def craete_task_by_name(task_name):
+    def create_task_by_name(task_name):
         ui_action.send_key_to_elem(Electron_Page.taskField(), task_name)
 
     @staticmethod
@@ -57,5 +54,3 @@ class create_task:
                 return 7
             case _:
                 return 0
-
-
