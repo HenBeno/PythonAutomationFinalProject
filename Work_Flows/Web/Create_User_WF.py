@@ -1,5 +1,3 @@
-from time import sleep
-
 import allure
 
 import Utilities
@@ -14,6 +12,7 @@ from extension.Ui_Action import ui_action
 class create_user_wf:
 
     @staticmethod
+    @allure.step("")
     def create_user():
         create_user_wf.singup()
         create_user_wf.fill_new_user_data()

@@ -1,3 +1,5 @@
+import allure
+
 import Utilities
 from Utilities.Manage_Pages import Page_Manager
 from extension.Appium_Actions import Appium_Actions
@@ -6,6 +8,7 @@ from extension.Appium_Actions import Appium_Actions
 class Calculator_calc:
 
     @staticmethod
+    @allure.title("test calculator - appium")
     def Calc_test():
         Appium_Actions.Click_on_ele(Utilities.Manage_Pages.Calculator_PO.enter_to_calculator())
         Appium_Actions.Click_on_ele(Utilities.Manage_Pages.Calculator_PO.num_9())

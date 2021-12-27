@@ -1,3 +1,4 @@
+import allure
 import pytest
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
@@ -14,6 +15,7 @@ driver = None
 action = None
 
 @pytest.fixture(scope='class')
+@allure.step("init web driver")
 def init_web(request):
     if get_data("Browser") == "chrome":
         driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -36,6 +38,7 @@ def init_web(request):
 
 
 @pytest.fixture(scope='class')
+@allure.step("init Desktop driver")
 def init_desktop(request):
     desired_caps = {}
     desired_caps["app"] = get_data("desired_caps")
@@ -51,6 +54,7 @@ def init_desktop(request):
 
 
 @pytest.fixture(scope='class')
+@allure.step("init electron driver")
 def init_electron(request):
     electron_app = get_data("electron_app_path")
     edriver = get_data("electron_driver")
@@ -66,6 +70,7 @@ def init_electron(request):
 
 
 @pytest.fixture(scope='class')
+@allure.step("init appium driver")
 def init_appium(request):
     dc = {}
     dc['reportDirectory'] = get_data("reportDirectory")
@@ -83,6 +88,7 @@ def init_appium(request):
     driver.quit()
 
 @pytest.fixture(scope='class')
+@allure.step("init api")
 def init_api(request):
     url = get_data("base_url")
     globals()['url'] = url

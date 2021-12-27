@@ -1,3 +1,5 @@
+import allure
+
 import Utilities
 from Utilities import XLUtils
 from Utilities.Manage_Pages import Page_Manager
@@ -13,11 +15,13 @@ class login_xml_wf:
     path = get_data("XMLPath")
 
     @staticmethod
+    @allure.step("login_and_verify_from_xml")
     def login_and_verify_from_xml():
         login_xml_wf.send_login_details()
         return login_xml_wf.check_results()
 
     @staticmethod
+    @allure.step("send_login_details")
     def send_login_details():
         for i in range(2, XLUtils.getRowCount(path, 'Sheet1') + 1):
             if login_wf.login_and_verify(XLUtils.readData(path, 'Sheet1', i, 1),
@@ -28,6 +32,7 @@ class login_xml_wf:
                 XLUtils.writeData(path, 'Sheet1', i, 4, "Fail")
 
     @staticmethod
+    @allure.step("check_results")
     def check_results():
 
         for i in range(2, XLUtils.getRowCount(path, 'Sheet1') + 1):
