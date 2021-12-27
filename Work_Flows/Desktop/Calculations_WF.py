@@ -1,5 +1,6 @@
 import Utilities
 from extension.Ui_Action import ui_action
+from Utilities.Manage_Pages import Page_Manager
 
 
 class calculations_wf:
