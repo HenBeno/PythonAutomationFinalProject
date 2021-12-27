@@ -43,7 +43,9 @@ def init_desktop(request):
     desired_caps["deviceName"] = get_data("WindowsPC")
     driver = webdriver.Remote(get_data("server"), desired_caps)
     driver.implicitly_wait(4)
+    globals()['driver'] = driver
     request.cls.driver = driver
+    Page_Manager.init_web_page(driver)
     yield
     driver.quit()
 
@@ -56,7 +58,9 @@ def init_electron(request):
     options.binary_location = electron_app
     driver = webdriver.Chrome(chrome_options=options, executable_path=edriver)
     driver.implicitly_wait(4)
+    globals()['driver'] = driver
     request.cls.driver = driver
+    Page_Manager.init_web_page(driver)
     yield
     driver.quit()
 
@@ -72,7 +76,9 @@ def init_appium(request):
     dc['appActivity'] = get_data("appActivity")
     dc['platformName'] = get_data("platformName")
     driver = webdriver.Remote(get_data("server_appium"), dc)
+    globals()['driver'] = driver
     request.cls.driver = driver
+    Page_Manager.init_web_page(driver)
     yield
     driver.quit()
 

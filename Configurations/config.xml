@@ -21,6 +21,8 @@
    #init_electron
    <electron_app_path>D:\\Electron API Demos-win32-ia32\\Electron API Demos.exe</electron_app_path>
    <electron_driver>C:\\Automation\\electrondriver.exe</electron_driver>
+   <HexColor>D0021B</HexColor>
+   <ExpectedHexColor>background: rgb(208, 2, 27);</ExpectedHexColor>
 
    #init_appium
    <reportDirectory>reports</reportDirectory>
