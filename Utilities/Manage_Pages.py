@@ -1,3 +1,4 @@
+from Page_Objects.Desktop.Calculate_PO import Calculate_Page
 from Page_Objects.Web.Create_User_PO import Create_User_Page
 from Page_Objects.Web.Left_Bar_PO import Left_Bar_Page
 from Page_Objects.Web.Login_PO import Login

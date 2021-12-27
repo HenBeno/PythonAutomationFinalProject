@@ -1,3 +1,5 @@
+import allure
+
 import Utilities
 from Utilities.Manage_Pages import Page_Manager
 from extension.Appium_Actions import Appium_Actions
@@ -6,6 +8,7 @@ from extension.Appium_Actions import Appium_Actions
 class listview_edit:
 
     @staticmethod
+    @allure.title("test listview edit section - appium")
     def listview_edit():
         Utilities.Manage_Pages.Edit_Section_PO.goBack()
         Appium_Actions.Click_on_ele(Utilities.Manage_Pages.Edit_Section_PO.settings_btn())

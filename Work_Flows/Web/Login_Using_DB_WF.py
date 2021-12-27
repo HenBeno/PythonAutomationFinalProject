@@ -1,4 +1,5 @@
 from smart_assertions import soft_assert
+import allure
 
 from Utilities.DB_Manager import db_connector
 from Work_Flows.Web.Login_WF import login_wf
@@ -7,10 +8,12 @@ from Work_Flows.Web.Login_WF import login_wf
 class login_use_database_wf:
 
     @staticmethod
+    @allure.step("Login with DB")
     def log_in_db():
         login_use_database_wf.db_connector()
 
     @staticmethod
+    @allure.step("starting DB Connection")
     def db_connector():
         mydb = db_connector()
         query = "SELECT user_name, password FROM Employees WHERE comments ='correct'"

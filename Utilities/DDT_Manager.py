@@ -1,6 +1,9 @@
 import csv
 
+import allure
 
+
+@allure.step("reading data from csv")
 def read_data_from_csv(filename):
     # create empty list
     data_list = []
