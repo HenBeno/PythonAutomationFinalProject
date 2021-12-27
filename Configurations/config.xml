@@ -4,9 +4,9 @@
     #init_web
 	<Url>http://localhost:3030/signin</Url>
 	<Browser>chrome</Browser>
-	<RealWorldApp_name_txt>NameTemp9</RealWorldApp_name_txt>
-	<RealWorldApp_last_name_txt>LastNameTemp9</RealWorldApp_last_name_txt>
-	<RealWorldApp_user_name_txt>MyUserTemp9</RealWorldApp_user_name_txt>
+	<RealWorldApp_name_txt>NameTemp</RealWorldApp_name_txt>
+	<RealWorldApp_last_name_txt>LastNameTemp</RealWorldApp_last_name_txt>
+	<RealWorldApp_user_name_txt>MyUserTemp</RealWorldApp_user_name_txt>
 	<RealWorldApp_password_txt>123456</RealWorldApp_password_txt>
     <RealWorldApp_bank_name_txt>Leumi</RealWorldApp_bank_name_txt>
     <RealWorldApp_routing_number_txt>123456789</RealWorldApp_routing_number_txt>
