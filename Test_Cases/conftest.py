@@ -89,7 +89,7 @@ def init_appium(request):
     dc['udid'] = get_data("udid")
     dc['appPackage'] = get_data("appPackage")
     dc['appActivity'] = get_data("appActivity")
-    dc['platformName'] = get_data("platformName")
+    dc['platformName'] = get_data("platformNameAppium")
     driver = webdriver.Remote(get_data("server_appium"), dc)
     globals()['driver'] = driver
     request.cls.driver = driver
