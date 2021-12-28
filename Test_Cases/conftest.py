@@ -1,3 +1,5 @@
+import os
+
 import allure
 import pytest
 from applitools.selenium import Eyes
@@ -17,11 +19,12 @@ eyes = Eyes()
 @allure.step("init web driver")
 @pytest.fixture(scope='class')
 def init_web(request):
-    if get_data("Browser") == "chrome":
+    browser_type = os.getenv("Browser")
+    if browser_type == "chrome":
         driver = webdriver.Chrome(ChromeDriverManager().install())
-    elif get_data("Browser") == "edge":
+    elif browser_type == "edge":
         edriver = webdriver.Edge(EdgeChromiumDriverManager().install())
-    elif get_data("Browser") == "firefox":
+    elif browser_type == "firefox":
         edriver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
     else:
         driver = None

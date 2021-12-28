@@ -1,13 +1,8 @@
 import allure
-import password as password
-import username as username
 
-import Utilities
 from Test_Cases.conftest import open_eye, eyes
-from Utilities.Manage_Pages import Page_Manager
 from Work_Flows.Web.Login_WF import login_wf
 from Work_Flows.Web.Logout_WF import logout_wf
-from extension.Ui_Action import ui_action
 
 
 class graphic_elements_wf:
