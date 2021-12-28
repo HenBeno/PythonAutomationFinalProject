@@ -1,17 +1,17 @@
 import allure
 import pytest
+from applitools.selenium import Eyes
 from selenium import webdriver
-from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
-from Utilities.Listeners import EventListener
 from Utilities.Manage_Pages import Page_Manager
 from Utilities.Read_Properties import get_data
 
 driver = None
 action = None
+eyes = Eyes()
 
 
 @allure.step("init web driver")
@@ -31,11 +31,17 @@ def init_web(request):
     driver.implicitly_wait(4)
 
     globals()['driver'] = driver
+
     request.cls.driver = driver
     Page_Manager.init_web_page(driver)
 
     yield
     driver.quit()
+
+
+def open_eye():
+    eyes.api_key = 'fvJvl7ElSUjzARieAXzLB1035bsvifVMfka3PzDiUXrcM110'
+    eyes.open(driver, "Test App Graphic", "Check if bank account change")
 
 
 @allure.step("init Desktop driver")

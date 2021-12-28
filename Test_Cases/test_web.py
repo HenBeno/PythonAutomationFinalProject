@@ -4,6 +4,7 @@ from smart_assertions import verify_expectations
 from Test_Cases.conftest import *
 from Utilities.Read_Properties import get_data
 from Work_Flows.Web.Create_User_WF import create_user_wf
+from Work_Flows.Web.Graphic_WF import graphic_elements_wf
 from Work_Flows.Web.Login_Using_DB_WF import login_use_database_wf
 from Work_Flows.Web.Login_Using_XML_WF import login_xml_wf
 from Work_Flows.Web.Make_Transfer_WF import make_transfer_wf
@@ -42,3 +43,10 @@ class Test_Web:
     def test_04_verify_transfer_req_by_name(self):
         login_use_database_wf.log_in_db()
         verify_expectations()
+
+    @allure.description("This tests login using login details from DB")
+    def test_05_verify_transfer_req_by_name(self):
+        self.driver.get(get_data("Url"))
+        graphic_elements_wf.graphic_verify(get_data("Eye_user_1"), get_data("BasePassword"), get_data("Eye_user_2"),
+                                           get_data("BasePassword"))
+
