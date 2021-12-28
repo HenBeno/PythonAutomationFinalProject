@@ -49,7 +49,7 @@ def init_desktop(request):
     driver.implicitly_wait(4)
     globals()['driver'] = driver
     request.cls.driver = driver
-    Page_Manager.init_web_page(driver)
+    Page_Manager.init_desktop_page(driver)
     yield
     driver.quit()
 
@@ -65,7 +65,7 @@ def init_electron(request):
     driver.implicitly_wait(4)
     globals()['driver'] = driver
     request.cls.driver = driver
-    Page_Manager.init_web_page(driver)
+    Page_Manager.init_electron_page(driver)
     yield
     driver.quit()
 
@@ -84,7 +84,7 @@ def init_appium(request):
     driver = webdriver.Remote(get_data("server_appium"), dc)
     globals()['driver'] = driver
     request.cls.driver = driver
-    Page_Manager.init_web_page(driver)
+    Page_Manager.init_android(driver)
     yield
     driver.quit()
 
