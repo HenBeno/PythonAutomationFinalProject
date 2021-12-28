@@ -1,4 +1,5 @@
-from Page_Objects.Electron.Electron_PO import Electron_Page
+import Utilities
+from Utilities.Manage_Pages import Page_Manager
 from extension.Ui_Action import ui_action
 
 
@@ -12,13 +13,12 @@ class electron_change_task_color:
 
     @staticmethod
     def click_pick_color_btn():
-        ui_action.click_on_elem(Electron_Page.colorPicker())
+        ui_action.click_on_elem(Utilities.Manage_Pages.Electron_PO.colorPicker())
 
     @staticmethod
     def insert_hex_color(hex_color):
-        ui_action.send_key_to_elem(Electron_Page.colorPicker_text(), hex_color)
-
+        ui_action.send_key_to_elem(Utilities.Manage_Pages.Electron_Page.colorPicker_text(), hex_color)
 
     @staticmethod
     def verify_color():
-        return Electron_Page.verifyHeaderColor().get_attribute("style")
+        return Utilities.Manage_Pages.Electron_Page.verifyHeaderColor().get_attribute("style")

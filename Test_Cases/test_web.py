@@ -1,3 +1,4 @@
+import allure
 from smart_assertions import verify_expectations
 
 from Test_Cases.conftest import *

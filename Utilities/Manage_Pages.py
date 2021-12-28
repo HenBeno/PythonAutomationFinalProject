@@ -20,6 +20,9 @@ Edit_Section_PO = None
 # Desktop
 Calculate_PO = None
 
+# Electron
+Electron_PO = None
+
 
 class Page_Manager:
 

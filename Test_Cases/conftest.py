@@ -14,11 +14,11 @@ driver = None
 action = None
 
 
-@pytest.fixture(scope='class')
 @allure.step("init web driver")
+@pytest.fixture(scope='class')
 def init_web(request):
     if get_data("Browser") == "chrome":
-        edriver = webdriver.Chrome(ChromeDriverManager().install())
+        driver = webdriver.Chrome(ChromeDriverManager().install())
     elif get_data("Browser") == "edge":
         edriver = webdriver.Edge(EdgeChromiumDriverManager().install())
     elif get_data("Browser") == "firefox":
@@ -26,7 +26,7 @@ def init_web(request):
     else:
         driver = None
         print("Wrong input, unrecognized browser")
-    driver = EventFiringWebDriver(edriver, EventListener())
+    # driver = EventFiringWebDriver(edriver, EventListener())
     driver.maximize_window()
     driver.implicitly_wait(4)
 
@@ -38,13 +38,13 @@ def init_web(request):
     driver.quit()
 
 
-@pytest.fixture(scope='class')
 @allure.step("init Desktop driver")
+@pytest.fixture(scope='class')
 def init_desktop(request):
     desired_caps = {}
     desired_caps["app"] = get_data("desired_caps")
-    desired_caps["platformName"] = get_data("Windows")
-    desired_caps["deviceName"] = get_data("WindowsPC")
+    desired_caps["platformName"] = get_data("platformName")
+    desired_caps["deviceName"] = get_data("deviceName")
     driver = webdriver.Remote(get_data("server"), desired_caps)
     driver.implicitly_wait(4)
     globals()['driver'] = driver
@@ -54,8 +54,8 @@ def init_desktop(request):
     driver.quit()
 
 
-@pytest.fixture(scope='class')
 @allure.step("init electron driver")
+@pytest.fixture(scope='class')
 def init_electron(request):
     electron_app = get_data("electron_app_path")
     edriver = get_data("electron_driver")
@@ -70,8 +70,8 @@ def init_electron(request):
     driver.quit()
 
 
-@pytest.fixture(scope='class')
 @allure.step("init appium driver")
+@pytest.fixture(scope='class')
 def init_appium(request):
     dc = {}
     dc['reportDirectory'] = get_data("reportDirectory")
@@ -89,8 +89,8 @@ def init_appium(request):
     driver.quit()
 
 
-@pytest.fixture(scope='class')
 @allure.step("init api")
+@pytest.fixture(scope='class')
 def init_api(request):
     url = get_data("base_url")
     globals()['url'] = url

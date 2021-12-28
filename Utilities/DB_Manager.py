@@ -1,4 +1,4 @@
-import mysql as mysql
+import mysql.connector
 
 
 def db_connector():
