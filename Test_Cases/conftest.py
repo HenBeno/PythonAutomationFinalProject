@@ -1,10 +1,12 @@
 import allure
 import pytest
 from selenium import webdriver
+from selenium.webdriver.support.event_firing_webdriver import EventFiringWebDriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
+from Utilities.Listeners import EventListener
 from Utilities.Manage_Pages import Page_Manager
 from Utilities.Read_Properties import get_data
 
@@ -16,14 +18,15 @@ action = None
 @allure.step("init web driver")
 def init_web(request):
     if get_data("Browser") == "chrome":
-        driver = webdriver.Chrome(ChromeDriverManager().install())
+        edriver = webdriver.Chrome(ChromeDriverManager().install())
     elif get_data("Browser") == "edge":
-        driver = webdriver.Edge(EdgeChromiumDriverManager().install())
+        edriver = webdriver.Edge(EdgeChromiumDriverManager().install())
     elif get_data("Browser") == "firefox":
-        driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+        edriver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
     else:
         driver = None
         print("Wrong input, unrecognized browser")
+    driver = EventFiringWebDriver(edriver, EventListener())
     driver.maximize_window()
     driver.implicitly_wait(4)
 
