@@ -25,19 +25,18 @@ Electron_PO = None
 
 
 class Page_Manager:
-
     def init_web_page(driver):
-        globals()['Create_User_PO'] = Create_User_Page(driver)
-        globals()['Login_PO'] = Login(driver)
-        globals()['Main_Page_PO'] = Main_Page(driver)
-        globals()['Left_Bar_PO'] = Left_Bar_Page(driver)
+        globals()["Create_User_PO"] = Create_User_Page(driver)
+        globals()["Login_PO"] = Login(driver)
+        globals()["Main_Page_PO"] = Main_Page(driver)
+        globals()["Left_Bar_PO"] = Left_Bar_Page(driver)
 
     def init_android(driver):
-        globals()['Calculator_PO'] = Calculator(driver)
-        globals()['Edit_Section_PO'] = Edit_Section_OP(driver)
+        globals()["Calculator_PO"] = Calculator(driver)
+        globals()["Edit_Section_PO"] = Edit_Section_OP(driver)
 
     def init_desktop_page(driver):
-        globals()['Calculate_PO'] = Calculate_Page(driver)
+        globals()["Calculate_PO"] = Calculate_Page(driver)
 
     def init_electron_page(driver):
-        globals()['Electron_PO'] = Electron_Page(driver)
+        globals()["Electron_PO"] = Electron_Page(driver)

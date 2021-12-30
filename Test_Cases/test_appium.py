@@ -7,13 +7,12 @@ from Work_Flows.Android.Listview_Edit_WF import listview_edit
 
 @pytest.mark.usefixtures("init_appium")
 class Test_appium:
-
     @allure.title("Reporting System Test")
     @allure.description("Android")
     def test_test01_testing_calculator(self):
         Calculator_calc.calc_test()
         res = Utilities.Manage_Pages.Calculator_PO.result().text
-        assert res == '49'
+        assert res == "49"
 
     @allure.title("Reporting System Test")
     @allure.description("listview_edit")

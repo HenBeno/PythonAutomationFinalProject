@@ -1,7 +1,8 @@
 from selenium.webdriver.common.keys import Keys
 
-from Page_Objects.Electron.Electron_PO import Electron_Page
+import Utilities
 from extension.Ui_Action import ui_action
+from Utilities.Manage_Pages import Page_Manager
 
 
 class create_task:
@@ -15,22 +16,22 @@ class create_task:
 
     @staticmethod
     def pick_color(color):
-        ui_action.click_on_elem(Electron_Page.openColorsList())
-        ui_action.click_on_elem(Electron_Page.openColorsList()[create_task.color_to_num(color.lower())])
+        ui_action.click(Utilities.Manage_Pages.Electron_PO.openColorsList())
+        ui_action.click(Utilities.Manage_Pages.Electron_PO.openColorsList()[create_task.color_to_num(color.lower())])
 
     @staticmethod
     def create_task_by_name(task_name):
-        ui_action.send_key_to_elem(Electron_Page.taskField(), task_name)
+        ui_action.send_key(Utilities.Manage_Pages.Electron_PO.taskField(), task_name)
 
     @staticmethod
     def insert_task():
-        ui_action.click_on_elem(Electron_Page.taskField())
-        Electron_Page.taskField().send_keys(Keys.RETURN)
+        ui_action.click(Utilities.Manage_Pages.Electron_PO.taskField())
+        Utilities.Manage_Pages.Electron_PO.taskField().send_keys(Keys.RETURN)
 
 
     @staticmethod
     def verify_creation(task_name):
-        for name in Electron_Page.taskText():
+        for name in Utilities.Manage_Pages.Electron_PO.taskText():
             if name.text == task_name:
                 return True
         return False

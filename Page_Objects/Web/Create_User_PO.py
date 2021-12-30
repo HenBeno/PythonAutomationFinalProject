@@ -1,5 +1,4 @@
 class Create_User_Page:
-
     def __init__(self, driver):
         self.driver = driver
 
@@ -25,7 +24,9 @@ class Create_User_Page:
         return self.driver.find_element_by_css_selector("span.MuiButton-label")
 
     def next_after_login_btn(self):
-        return self.driver.find_element_by_xpath("//button[@data-test='user-onboarding-next']/span")
+        return self.driver.find_element_by_xpath(
+            "//button[@data-test='user-onboarding-next']/span"
+        )
 
     def bank_name_txt(self):
         return self.driver.find_element_by_id("bankaccount-bankName-input")
@@ -37,7 +38,9 @@ class Create_User_Page:
         return self.driver.find_element_by_id("bankaccount-accountNumber-input")
 
     def save_info_btn(self):
-        return self.driver.find_element_by_xpath("//button[@data-test='bankaccount-submit']")
+        return self.driver.find_element_by_xpath(
+            "//button[@data-test='bankaccount-submit']"
+        )
 
     def present_user_name(self):
         return self.driver.find_element_by_xpath("//h6[@data-test='sidenav-username']")

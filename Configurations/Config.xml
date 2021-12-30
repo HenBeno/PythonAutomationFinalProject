@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Environment>
+
+    # init_web
+	<Url>http://localhost:3030/signin</Url>
+	<Browser>chrome</Browser>
+    <api_key>fvJvl7ElSUjzARieAXzLB1035bsvifVMfka3PzDiUXrcM110</api_key>
+
+
+
+   # init_electron
+   <electron_app_path>C:\Users\Hen Benoish\AppData\Local\Programs\todolist\Todolist.exe</electron_app_path>
+   <electron_driver>C:\\Automation\\electrondriver.exe</electron_driver>
+
+
+
+   # init_appium
+   <reportDirectory>reports</reportDirectory>
+   <reportFormat>xml</reportFormat>
+   <testName>Untitled</testName>
+   <appPackage>com.financial.calculator</appPackage>
+   <udid>d030a260</udid>
+   <appActivity>.FinancialCalculators</appActivity>
+   <platformNameAppium>android</platformNameAppium>
+   <server_appium>http://localhost:4723/wd/hub</server_appium>
+
+
+    # init_desktop
+    <desired_caps>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</desired_caps>
+    <platformName>Windows</platformName>
+    <deviceName>WindowsPC</deviceName>
+    <server>http://127.0.0.1:4723</server>
+
+
+
+    # init_api
+    <base_url>http://localhost:3000/posts</base_url>
+
+
+</Environment>

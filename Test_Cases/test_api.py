@@ -1,6 +1,11 @@
 from Test_Cases.conftest import *
-from Utilities.Read_Properties import get_data
-from Work_Flows.Api.Api_WF import assert_status_code, get_request, post_request, delete_request
+from Utilities.CommOps import get_data
+from Work_Flows.Api.Api_WF import (
+    assert_status_code,
+    get_request,
+    post_request,
+    delete_request,
+)
 
 
 @pytest.mark.usefixtures("init_api")
@@ -14,12 +19,16 @@ class Test_Api_Server:
 
     @allure.title("create new post")
     def test_02_create_post(self):
-        payload = {'userId': get_data("user_Id"), 'id': get_data("id"), 'title': get_data("title"),
-                   'body': get_data("body")}
+        payload = {
+            "userId": get_data("test", "user_Id"),
+            "id": get_data("test", "id"),
+            "title": get_data("test", "title"),
+            "body": get_data("test", "body"),
+        }
         response = post_request(self.url, payload)
         assert_status_code(response.status_code, 201)
 
     @allure.title("delete post")
     def test_03_delete_post(self):
-        response = delete_request(self.url, get_data("id_for_delete"))
+        response = delete_request(self.url, get_data("test", "id_for_delete"))
         assert_status_code(response.status_code, 200)

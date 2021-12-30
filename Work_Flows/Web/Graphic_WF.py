@@ -6,7 +6,6 @@ from Work_Flows.Web.Logout_WF import logout_wf
 
 
 class graphic_elements_wf:
-
     @staticmethod
     @allure.step("")
     def graphic_verify(username1, password1, username2, password2):
@@ -17,7 +16,6 @@ class graphic_elements_wf:
         graphic_elements_wf.take_screen_pic(username2)
         graphic_elements_wf.close_eye()
 
-
     @staticmethod
     @allure.step("Insert new user details")
     def open_eye():
@@ -25,7 +23,7 @@ class graphic_elements_wf:
 
     @staticmethod
     def take_screen_pic(username):
-        eyes.check_window('Screen Shot - login as ' + username)
+        eyes.check_window("Screen Shot - login as " + username)
         logout_wf.logout()
 
     @staticmethod

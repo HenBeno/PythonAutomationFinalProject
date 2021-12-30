@@ -7,7 +7,9 @@ def get(url):
 
 
 def post(url, payload):
-    response = requests.post(url, json=payload, headers={'Content-Type': 'application/json'})
+    response = requests.post(
+        url, json=payload, headers={"Content-Type": "application/json"}
+    )
     return response
 
 

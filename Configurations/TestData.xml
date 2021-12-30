@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Environment>
+
+    # Web - Create New User
+	<RealWorldApp_name_txt>NameTemp</RealWorldApp_name_txt>
+	<RealWorldApp_last_name_txt>LastNameTemp</RealWorldApp_last_name_txt>
+	<RealWorldApp_user_name_txt>MyUserTemp</RealWorldApp_user_name_txt>
+	<RealWorldApp_password_txt>123456</RealWorldApp_password_txt>
+    <RealWorldApp_bank_name_txt>Leumi</RealWorldApp_bank_name_txt>
+    <RealWorldApp_routing_number_txt>123456789</RealWorldApp_routing_number_txt>
+    <RealWorldApp_bank_account_number_txt>987654321</RealWorldApp_bank_account_number_txt>
+
+    # Web - Create New Money Transaction
+    <AmountToTransfer>3,500</AmountToTransfer>
+    <NoteToTransfer>First Transfer</NoteToTransfer>
+    <BaseUser>Tavares_Barrows</BaseUser>
+    <BasePassword>s3cret</BasePassword>
+    <XMLPath>C:\\Automation\\python\\pythonProject\\final_project_python\\Configurations\\LoginData.xlsx</XMLPath>
+
+
+    # Web - AppliTolls Tests Data
+    <Eye_user_1>Allie2</Eye_user_1>
+    <Eye_user_2>Giovanna74</Eye_user_2>
+    <eyes_header>Test App Graphic</eyes_header>
+    <eyes_test_name>Check if bank account change</eyes_test_name>
+
+
+
+    # Electron - Tests Data
+    <HexColor>D0021B</HexColor>
+    <ExpectedHexColor>background: rgb(208, 2, 27);</ExpectedHexColor>
+
+
+    # Desktop - Tests Data
+    <Clac_Plus>12+10+19</Clac_Plus>
+    <Clac_Minus>10-2-3</Clac_Minus>
+    <Clac_Mult>12*6*2</Clac_Mult>
+    <Clac_Dev>50/2</Clac_Dev>
+    <expected_Clac_Plus>41</expected_Clac_Plus>
+    <expected_Clac_Minus>5</expected_Clac_Minus>
+    <expected_Clac_Mult>144</expected_Clac_Mult>
+    <expected_Clac_Dev>25</expected_Clac_Dev>
+
+
+    # Api - Tests Data
+    <user_Id>25</user_Id>
+    <id></id>
+    <title>title</title>
+    <body>body</body>
+    <id_for_delete>/100</id_for_delete>
+
+</Environment>
