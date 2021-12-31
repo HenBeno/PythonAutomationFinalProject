@@ -20,10 +20,13 @@ class login_xml_wf:
     @allure.step("send_login_details")
     def send_login_details():
         for i in range(2, XLUtils.getRowCount(path, "Sheet1") + 1):
-            if login_wf.login_and_verify(
-                XLUtils.readData(path, "Sheet1", i, 1),
-                XLUtils.readData(path, "Sheet1", i, 2),
-            ) == XLUtils.readData(path, "Sheet1", i, 3):
+            if (
+                login_wf.login_and_verify(
+                    XLUtils.readData(path, "Sheet1", i, 1),
+                    XLUtils.readData(path, "Sheet1", i, 2),
+                )
+                == XLUtils.readData(path, "Sheet1", i, 3)
+            ):
                 XLUtils.writeData(path, "Sheet1", i, 4, "Pass")
             else:
                 XLUtils.writeData(path, "Sheet1", i, 4, "Fail")

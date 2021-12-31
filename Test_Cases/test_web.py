@@ -23,25 +23,31 @@ class Test_Web:
     @allure.description("This tests create new transfer and verify")
     def test_02_verify_transfer_by_name(self):
         # self.driver.get(get_data("Url"))
-        assert make_transfer_wf.transfer_money_wf(
-            "Edgar Johns",
-            get_data("test", "AmountToTransfer"),
-            get_data("test", "NoteToTransfer"),
-        ) == "Paid $" + get_data("test", "AmountToTransfer") + ".00 for " + get_data(
-            "test", "NoteToTransfer"
+        assert (
+            make_transfer_wf.transfer_money_wf(
+                "Edgar Johns",
+                get_data("test", "AmountToTransfer"),
+                get_data("test", "NoteToTransfer"),
+            )
+            == "Paid $"
+            + get_data("test", "AmountToTransfer")
+            + ".00 for "
+            + get_data("test", "NoteToTransfer")
         )
 
     @allure.description("This tests create new transfer request and verify")
     def test_03_verify_transfer_req_by_name(self):
         # self.driver.get(get_data("Url"))
-        assert make_transfer_wf.req_transfer_money_wf(
-            "Edgar Johns",
-            get_data("test", "AmountToTransfer"),
-            get_data("test", "NoteToTransfer"),
-        ) == "Requested $" + get_data(
-            "test", "AmountToTransfer"
-        ) + ".00 for " + get_data(
-            "test", "NoteToTransfer"
+        assert (
+            make_transfer_wf.req_transfer_money_wf(
+                "Edgar Johns",
+                get_data("test", "AmountToTransfer"),
+                get_data("test", "NoteToTransfer"),
+            )
+            == "Requested $"
+            + get_data("test", "AmountToTransfer")
+            + ".00 for "
+            + get_data("test", "NoteToTransfer")
         )
 
     @allure.description("This tests login using login details from DDT (XML)")

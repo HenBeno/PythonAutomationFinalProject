@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Environment>
 
+
     # init_web
 	<Url>http://localhost:3030/signin</Url>
 	<Browser>chrome</Browser>
     <api_key>fvJvl7ElSUjzARieAXzLB1035bsvifVMfka3PzDiUXrcM110</api_key>
 
 
+    # init_db
+    <db_host>jdbc:mysql://sql6.freemysqlhosting.net:3306/sql6455264</db_host>
+    <db_name>sql6455264</db_name>
+    <db_password>iRpvF9AjbD</db_password>
+
 
    # init_electron
    <electron_app_path>C:\Users\Hen Benoish\AppData\Local\Programs\todolist\Todolist.exe</electron_app_path>
    <electron_driver>C:\\Automation\\electrondriver.exe</electron_driver>
-
 
 
    # init_appium
@@ -30,7 +35,6 @@
     <platformName>Windows</platformName>
     <deviceName>WindowsPC</deviceName>
     <server>http://127.0.0.1:4723</server>
-
 
 
     # init_api

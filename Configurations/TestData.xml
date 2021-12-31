@@ -10,6 +10,7 @@
     <RealWorldApp_routing_number_txt>123456789</RealWorldApp_routing_number_txt>
     <RealWorldApp_bank_account_number_txt>987654321</RealWorldApp_bank_account_number_txt>
 
+
     # Web - Create New Money Transaction
     <AmountToTransfer>3,500</AmountToTransfer>
     <NoteToTransfer>First Transfer</NoteToTransfer>
@@ -24,6 +25,9 @@
     <eyes_header>Test App Graphic</eyes_header>
     <eyes_test_name>Check if bank account change</eyes_test_name>
 
+
+    # Web - db
+    <Select_Statement>SELECT user_name, password FROM Employees WHERE comments ='correct'</Select_Statement>
 
 
     # Electron - Tests Data

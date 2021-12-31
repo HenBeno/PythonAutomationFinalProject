@@ -10,12 +10,8 @@ class listview_edit:
     @allure.title("test listview edit section - appium")
     def listview_edit():
         Utilities.Manage_Pages.Edit_Section_PO.goBack()
-        ui_action.click(
-            Utilities.Manage_Pages.Edit_Section_PO.settings_btn()
-        )
+        ui_action.click(Utilities.Manage_Pages.Edit_Section_PO.settings_btn())
         ui_action.click(Utilities.Manage_Pages.Edit_Section_PO.edit_btn())
         ui_action.click(Utilities.Manage_Pages.Edit_Section_PO.first_item())
-        ui_action.click(
-            Utilities.Manage_Pages.Edit_Section_PO.second_item()
-        )
+        ui_action.click(Utilities.Manage_Pages.Edit_Section_PO.second_item())
         Utilities.Manage_Pages.Edit_Section_PO.goBack()

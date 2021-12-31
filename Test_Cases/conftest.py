@@ -47,7 +47,9 @@ def init_web(request):
 
 def open_eye():
     eyes.api_key = get_data("conf", "api_key")
-    eyes.open(driver, get_data("test", "eyes_header"), get_data("test", "eyes_test_name"))
+    eyes.open(
+        driver, get_data("test", "eyes_header"), get_data("test", "eyes_test_name")
+    )
 
 
 @allure.step("init Desktop driver")
