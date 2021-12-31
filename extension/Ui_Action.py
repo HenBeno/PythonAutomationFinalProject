@@ -15,6 +15,11 @@ class ui_action:
         elem.send_keys(value)
 
     @staticmethod
+    @allure.step("Clear text from elem")
+    def clear_key(elem):
+        elem.clear()
+
+    @staticmethod
     @allure.step("Click on elem")
     def click(elem):
         elem.click()

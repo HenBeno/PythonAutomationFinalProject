@@ -1,4 +1,5 @@
 from selenium.webdriver.common.keys import Keys
+from smart_assertions import soft_assert
 
 import Utilities
 from extension.Ui_Action import ui_action
@@ -8,16 +9,19 @@ from Utilities.Manage_Pages import Page_Manager
 class create_task:
 
     @staticmethod
-    def create_task_wf(task_name, color):
-        create_task.pick_color(color)
-        create_task.create_task_by_name(task_name)
-        create_task.insert_task()
-        return create_task.verify_creation(task_name)
+    def create_task_wf():
+        for i in range(3):
+            color = "red"
+            task_name = "Task" + str(i)
+            create_task.pick_color(color)
+            create_task.create_task_by_name(task_name)
+            create_task.insert_task()
+            soft_assert(create_task.verify_creation(task_name), "Fail To create task" + str(i))
 
     @staticmethod
     def pick_color(color):
         ui_action.click(Utilities.Manage_Pages.Electron_PO.openColorsList())
-        ui_action.click(Utilities.Manage_Pages.Electron_PO.openColorsList()[create_task.color_to_num(color.lower())])
+        ui_action.click(Utilities.Manage_Pages.Electron_PO.taskColorsList()[create_task.color_to_num(color.lower())])
 
     @staticmethod
     def create_task_by_name(task_name):
@@ -27,7 +31,6 @@ class create_task:
     def insert_task():
         ui_action.click(Utilities.Manage_Pages.Electron_PO.taskField())
         Utilities.Manage_Pages.Electron_PO.taskField().send_keys(Keys.RETURN)
-
 
     @staticmethod
     def verify_creation(task_name):

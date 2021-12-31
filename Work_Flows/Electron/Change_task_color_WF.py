@@ -1,3 +1,5 @@
+from time import sleep
+
 import Utilities
 from Utilities.Manage_Pages import Page_Manager
 from extension.Ui_Action import ui_action
@@ -16,6 +18,9 @@ class electron_change_task_color:
 
     @staticmethod
     def insert_hex_color(hex_color):
+        ui_action.clear_key(
+            Utilities.Manage_Pages.Electron_PO.colorPicker_text()
+        )
         ui_action.send_key(
             Utilities.Manage_Pages.Electron_PO.colorPicker_text(), hex_color
         )

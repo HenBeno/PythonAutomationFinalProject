@@ -11,7 +11,7 @@ class Electron_Page:
         return self.driver.find_element_by_xpath("//input[@class='vc-input__input'][1]")
 
     def verifyHeaderColor(self):
-        return self.driver.find_element_by_tagname("header")
+        return self.driver.find_element_by_tag_name("header")
 
     def taskField(self):
         return self.driver.find_element_by_xpath(
