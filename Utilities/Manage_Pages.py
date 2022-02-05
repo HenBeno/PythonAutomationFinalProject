@@ -1,5 +1,6 @@
 from Page_Objects.Appium.Calculator_PO import Calculator
 from Page_Objects.Appium.Edit_Section_PO import Edit_Section_OP
+from Page_Objects.Desktop.Calculate_Menu_PO import Calculate_Menu_Page
 from Page_Objects.Desktop.Calculate_PO import Calculate_Page
 from Page_Objects.Electron.Electron_PO import Electron_Page
 from Page_Objects.Web.Create_User_PO import Create_User_Page
@@ -19,6 +20,7 @@ Edit_Section_PO = None
 
 # Desktop
 Calculate_PO = None
+Calculate_Menu_PO = None
 
 # Electron
 Electron_PO = None
@@ -37,6 +39,7 @@ class Page_Manager:
 
     def init_desktop_page(driver):
         globals()["Calculate_PO"] = Calculate_Page(driver)
+        globals()["Calculate_Menu_PO"] = Calculate_Menu_Page(driver)
 
     def init_electron_page(driver):
         globals()["Electron_PO"] = Electron_Page(driver)
